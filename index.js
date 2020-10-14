@@ -204,34 +204,107 @@
 
 // For / Of
 
-for (let letter of 'Timothy') {
-  console.log(letter);
+// for (let letter of 'Timothy') {
+//   console.log(letter);
+// }
+
+// let fruits = ['banana', 'apple', 'cherry'];
+
+// for (let fruit of fruits) {
+//   console.log(fruit);
+// }
+
+// let sandwiches = new Map();
+
+// sandwiches.set('turkey', 'A delcious turkey sandwich on white bread');
+// sandwiches.set('ham', 'A delcious ham sandwich on wheat bread');
+// sandwiches.set('chicken', 'A delcious chicken sandwich on whole grain bread');
+
+// for (let sandwich of sandwiches) {
+//   console.log(sandwich);
+// }
+
+// for (let sandwich of sandwiches.keys()) {
+//   console.log(sandwich);
+// }
+
+// for (let sandwich of sandwiches.values()) {
+//   console.log(sandwich);
+// }
+
+// for (let sandwich of sandwiches.entries()) {
+//   console.log(sandwich);
+// }
+
+
+
+// Classes
+
+// class Vehicle {
+//   constructor(description, wheels) {
+//     this.description = description;
+//     this.wheels = wheels;
+//   }
+
+//   describeYourself() {
+//     console.log(`I am a ${this.description} with ${this.wheels} wheels!`);
+//   }
+// }
+
+// let myCar = new Vehicle('Mazda 3', 4);
+
+// console.log(myCar);
+// myCar.describeYourself();
+
+// // Class Inheritance
+
+// class SemiTruck extends Vehicle {
+//   constructor() {
+//     super("Semi Truck", 18);
+//   }
+// }
+
+// let myTruck = new SemiTruck();
+
+// console.log(myTruck);
+// myTruck.describeYourself();
+
+
+
+// Getters & Setters
+
+let attendance = {
+  _list: [],
+  set addName(name) {
+      this._list.push(name);
+  },
+  get list() {
+    return this._list.join(', ');
+  }
 }
 
-let fruits = ['banana', 'apple', 'cherry'];
+attendance.addName = 'Tim Winfred';
+attendance.addName = 'Noodle Kanoodle';
+attendance.addName = 'John Doe';
 
-for (let fruit of fruits) {
-  console.log(fruit);
+console.log(attendance.list);
+
+class Hike {
+  constructor(distance, pace) {
+    this.distance = distance;
+    this.pace = pace;
+  }
+
+  get lengthInHours() {
+    return `${this.calcLength()} hours.`;
+  }
+
+  calcLength() {
+    return this.distance / this.pace;
+  }
 }
 
-let sandwiches = new Map();
+let ElysianPark = new Hike(10, 2);
 
-sandwiches.set('turkey', 'A delcious turkey sandwich on white bread');
-sandwiches.set('ham', 'A delcious ham sandwich on wheat bread');
-sandwiches.set('chicken', 'A delcious chicken sandwich on whole grain bread');
-
-for (let sandwich of sandwiches) {
-  console.log(sandwich);
-}
-
-for (let sandwich of sandwiches.keys()) {
-  console.log(sandwich);
-}
-
-for (let sandwich of sandwiches.values()) {
-  console.log(sandwich);
-}
-
-for (let sandwich of sandwiches.entries()) {
-  console.log(sandwich);
-}
+console.log(ElysianPark);
+console.log(ElysianPark.lengthInHours);
